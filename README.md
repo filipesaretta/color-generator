@@ -1,1 +1,1 @@
-Color Flipper project with vanilla TS 
+A color generator project - vanilla TS 
