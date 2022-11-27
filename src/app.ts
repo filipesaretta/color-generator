@@ -1,9 +1,20 @@
-export function setupCounter(element: HTMLButtonElement) {
-  let counter = 0
-  const setCounter = (count: number) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
+const generatorButton = document.querySelector<HTMLElement>('button')
+const bg = document.querySelector<HTMLElement>('main')
+
+function generateColors() {
+  const color = '#' + Math.floor(Math.random() * (0xffffff + 1)).toString(16).padStart(6, 0);
+  const hexText = bg?.querySelector('.hex');
+
+  if (bg && hexText) {
+    const button = bg.querySelector('button')
+    button?.style.borderColor
+    bg.style.backgroundColor = color;
+    hexText.textContent = color
   }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+
 }
+
+
+generatorButton?.addEventListener('click', generateColors);
+
+generateColors()
