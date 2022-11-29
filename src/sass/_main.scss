@@ -34,3 +34,22 @@ main {
     background-color: #001427;
   }
 }
+
+.hex_container {
+  position: relative;
+
+  .tag {
+    display: none;
+  }
+
+  .is-copied {
+    display: block;
+    position: absolute;
+    color: white;
+    padding: 0 1rem;
+    background-color: #001427;
+    border-radius: 8px;
+    bottom: 3rem;
+    right: 0;
+  }
+}

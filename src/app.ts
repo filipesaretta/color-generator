@@ -17,8 +17,13 @@ function generateColors() {
 
 
 function copyToClipBoard() {
-  // TODO: Need a look to add an alert as it was copied
-  navigator.clipboard.writeText(colorHex?.textContent!)
+  navigator.clipboard.writeText(colorHex?.textContent!).then(() => {
+    const tag = bg?.querySelector('.tag')
+    tag?.classList.add('is-copied');
+    setTimeout(() => {
+      tag?.classList.remove('is-copied');
+    }, 1500);
+  })
 
 }
 
